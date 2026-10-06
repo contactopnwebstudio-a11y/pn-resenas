@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reseñas · PN Web Studio</title>
+<meta name="description" content="Opiniones de las marcas que han trabajado con PN Web Studio. Deja la tuya.">
+<meta name="theme-color" content="#3E2C21">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Apertura: el sello y las puertas -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="door door-l"><span class="door-word">TU OPINIÓN</span></div>
+  <div class="door door-r"><span class="door-word">TU OPINIÓN</span></div>
+  <div class="intro-inner">
+    <div class="seal"><span>PN.</span><svg viewBox="0 0 200 200" class="seal-ring"><defs><path id="ring" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#ring" textLength="486" lengthAdjust="spacing">LIBRO DE OPINIONES · PN WEB STUDIO · </textPath></text></svg></div>
+    <p class="intro-line l1">Tu opinión</p>
+    <p class="intro-line l2"><em>también</em> diseña.</p>
+  </div>
+  <button class="skip" id="skip" type="button">Saltar ↘</button>
+</div>
+
+<header class="bar">
+  <a class="brand" href="#top">PN<span>.</span>WEBSTUDIO</a>
+  <nav class="bar-nav">
+    <a href="#muro">Reseñas</a>
+    <a class="bar-cta" href="#deja-tu-huella">Valorar mi experiencia ↘</a>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="demo-banner" id="demoBanner" hidden>
+    <strong>Vista previa.</strong> Estás viendo reseñas de ejemplo y lo que escribas no se guarda. Conecta Supabase en <code>config.js</code> (mira el LEEME) para recoger las reales.
+  </div>
+
+  <section class="hero">
+    <div class="hero-title">
+      <div class="hero-head">
+      <p class="eyebrow">Libro de opiniones · Barcelona / Vallès</p>
+      <h1>
+        <span class="script">Opiniones</span>
+        <span class="big">RESEÑAS</span>
+      </h1>
+      </div>
+      <div class="hero-copy">
+      <p class="lede">Marcas que se sienten <em>vivas</em>, contadas por quienes las viven cada día.</p>
+      <a class="btn" href="#deja-tu-huella">Dejar mi valoración <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <aside class="score" aria-label="Puntuación media">
+      <div class="score-top">
+        <span class="score-num" id="avg">–</span>
+        <div>
+          <div class="stars stars-lg" id="avgStars" aria-hidden="true"></div>
+          <p class="score-meta" id="count">Aún no hay reseñas</p>
+        </div>
+      </div>
+      <ol class="dist" id="dist"></ol>
+      <p class="score-note">Puntuación sobre 5, calculada con todas las reseñas publicadas.</p>
+    </aside>
+  </section>
+
+  <section class="wall-wrap" id="muro">
+    <div class="wall-head">
+      <h2>Lo que <em>dicen</em></h2>
+      <div class="tools">
+        <div class="chips" id="chips" role="group" aria-label="Filtrar por servicio"></div>
+        <label class="sort">
+          <span>Ordenar</span>
+          <select id="sort">
+            <option value="recent">Más recientes</option>
+            <option value="best">Mejor valoradas</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="wall" id="wall" aria-live="polite"></div>
+    <div class="empty" id="empty" hidden>
+      <p class="empty-script">Todavía en blanco</p>
+      <p>Este muro espera su primera reseña. <a href="#deja-tu-huella">Escribe la primera ↘</a></p>
+    </div>
+  </section>
+
+  <section class="leave" id="deja-tu-huella">
+    <div class="leave-copy">
+      <p class="eyebrow">Tu turno</p>
+      <h2>Deja tu <em>huella</em></h2>
+      <p>Si hemos trabajado juntos en tu logo, tu Instagram, el letrero de tu local o tu carta, cuéntame cómo fue. Tu reseña aparece en el muro en cuanto la envías.</p>
+    </div>
+
+    <div class="leave-grid">
+      <form class="form" id="form" novalidate>
+        <fieldset class="rate">
+          <legend>¿Cuántas estrellas le das?</legend>
+          <div class="rate-stars" id="rateStars">
+            <input type="radio" name="puntuacion" id="r1" value="1"><label for="r1" title="1 estrella"><span class="sr">1 estrella</span></label>
+            <input type="radio" name="puntuacion" id="r2" value="2"><label for="r2" title="2 estrellas"><span class="sr">2 estrellas</span></label>
+            <input type="radio" name="puntuacion" id="r3" value="3"><label for="r3" title="3 estrellas"><span class="sr">3 estrellas</span></label>
+            <input type="radio" name="puntuacion" id="r4" value="4"><label for="r4" title="4 estrellas"><span class="sr">4 estrellas</span></label>
+            <input type="radio" name="puntuacion" id="r5" value="5"><label for="r5" title="5 estrellas"><span class="sr">5 estrellas</span></label>
+          </div>
+          <p class="rate-word" id="rateWord">Elige de 1 a 5</p>
+          <p class="err" id="errRate" hidden>Elige una puntuación.</p>
+        </fieldset>
+
+        <div class="row">
+          <div class="field">
+            <label for="nombre">Tu nombre</label>
+            <input id="nombre" name="nombre" type="text" maxlength="60" autocomplete="name" placeholder="Lucía M.">
+            <p class="err" id="errNombre" hidden>Escribe tu nombre (mínimo 2 letras).</p>
+          </div>
+          <div class="field">
+            <label for="negocio">Tu marca o local <span class="opt">opcional</span></label>
+            <input id="negocio" name="negocio" type="text" maxlength="80" autocomplete="organization" placeholder="Café Nácar">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="servicio">¿Qué hicimos juntos?</label>
+          <select id="servicio" name="servicio"></select>
+        </div>
+
+        <div class="field">
+          <label for="texto">Tu experiencia</label>
+          <textarea id="texto" name="texto" rows="5" maxlength="600" placeholder="Cómo fue el proceso, qué cambió en tu marca, qué te llevas…"></textarea>
+          <div class="field-foot"><p class="err" id="errTexto" hidden>Cuéntalo en al menos 10 caracteres.</p><span class="counter" id="counter">0 / 600</span></div>
+        </div>
+
+        <!-- trampa para bots: las personas no la ven -->
+        <div class="hp" aria-hidden="true"><label for="web">Web</label><input id="web" name="web" type="text" tabindex="-1" autocomplete="off"></div>
+
+        <button class="btn btn-send" id="send" type="submit">Publicar mi reseña <span aria-hidden="true">↗</span></button>
+        <p class="form-msg" id="formMsg" role="status"></p>
+      </form>
+
+      <div class="preview">
+        <p class="preview-label">Así se verá en el muro</p>
+        <div id="previewCard"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p class="foot-big">PN<span>.</span>WEBSTUDIO</p>
+  <div class="foot-links">
+    <a id="igLink" href="https://instagram.com/pn.webstudio" target="_blank" rel="noopener">Instagram @pn.webstudio ↗</a>
+    <a id="pfLink" href="https://pn-web-studio.vercel.app/" target="_blank" rel="noopener">Ver portafolio ↗</a>
+  </div>
+  <p class="foot-small">Gracias por cada palabra. Hacen marca también.</p>
+</footer>
+
+<template id="cardTpl">
+  <article class="card">
+    <div class="card-top">
+      <div class="stars" aria-hidden="true"></div>
+      <span class="badge" hidden>Nueva</span>
+    </div>
+    <p class="card-text"></p>
+    <div class="card-foot">
+      <span class="avatar"></span>
+      <div class="who">
+        <p class="who-name"></p>
+        <p class="who-meta"></p>
+      </div>
+    </div>
+  </article>
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
